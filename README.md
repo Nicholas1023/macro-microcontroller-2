@@ -28,7 +28,7 @@ A BASIC interpreter written in C for Macro Microcontroller, providing a simple c
 ## Schematics
 <img src="Assets/schematics.svg">
 
-View PCB file on https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNicholas1023%2Fmacro-microcontroller-2%2Fblob%2Fmain%2FPCB%20Files%2Fmacro-microcontroller-2.kicad_pcb!
+View PCB file at https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNicholas1023%2Fmacro-microcontroller-2%2Fblob%2Fmain%2FPCB%20Files%2Fmacro-microcontroller-2.kicad_pcb!
 
 ## Repository Structure
 ```
@@ -46,7 +46,7 @@ main
  └── schematics.pdf ← Schematics
  ```
 
-## Bill of Materials (Excluding DNP)
+## Bill of Materials (Excluding Do Not Populate)
 |Component|Ref Designator|Qty|Footprint|
 |---------|--------------|---|---------|
 |TMB12A24|BZ1|1|Buzzer_12x9.5RM7.6|
