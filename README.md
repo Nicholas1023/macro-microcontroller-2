@@ -15,7 +15,7 @@ Macro Microcontroller 2 allows you to control GPIO pins using macropad-like keys
 <img src="Assets/enclosure-image.png">
 
 ## Macro Microcontroller BASIC Interpreter (Default Firmware)
-A BASIC interpreter written in C for Macro Microcontroller, providing a simple coding environment via a serial terminal. Currently available statements:
+A BASIC interpreter written in C for Macro Microcontroller, providing a simple coding environment via a serial terminal. You may view a demo at <a href="Assets/firmware-demo.mp4">Assets/firmware-demo.mp4</a>. Currently available statements:
 1. `PRINT`: Outputs text to the serial terminal.
 2. `LET`: Assigns a value (integer, float or string) to a variable (Only one variable is allowed for now).
 3. `INPUT`: Assigns a value (integer, float or string) to a variable via user input.
