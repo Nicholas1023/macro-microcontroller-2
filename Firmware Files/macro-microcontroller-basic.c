@@ -34,6 +34,7 @@ SOFTWARE.
 
 void interpretermain();
 void gpiocontrol();
+void keygpiocontrol();
 
 const int SW1 = 0;
 const int SW2 = 1;
@@ -197,6 +198,9 @@ void interpretermain() {
             variable[1] = "";
             line_count = 0;
             while (1) __wfi();
+
+        } else if (strcasecmp(statement, "KEY\n") == 0) {
+            while (1) keygpiocontrol();
         
         } else if (strcasecmp(statement, "LSVAR\n") == 0) {
             if (variable[0] != "") {
@@ -212,4 +216,32 @@ void gpiocontrol(int pin) {
     gpio_put(pin, 1);
     sleep_ms(1000);
     gpio_put(pin, 0);
+}
+
+void keygpiocontrol() {
+    if (gpio_get(SW1) == 1) {
+        while (true) {
+            gpio_put(IO1, 1);
+            if (gpio_get(SW1) == 0) {
+                gpio_put(IO1, 0);
+                break;
+            }
+        }
+    } else if (gpio_get(SW2) == 1) {
+        while (true) {
+            gpio_put(IO2, 1);
+            if (gpio_get(SW2) == 0) {
+                gpio_put(IO2, 0);
+                break;
+            }
+        }
+    } else if (gpio_get(SW3) == 1) {
+        while (true) {
+            gpio_put(IO3, 1);
+            if (gpio_get(SW3) == 0) {
+                gpio_put(IO3, 0);
+                break;
+            }
+        }
+    }
 }

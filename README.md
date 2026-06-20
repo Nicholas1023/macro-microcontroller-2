@@ -23,6 +23,7 @@ A BASIC interpreter written in C for Macro Microcontroller, providing a simple c
 5. `LSVAR`: Outputs variable name and their value to the serial terminal.
 6. `END`: Clears variable and reset line numbers.
 7. `EXIT`: Puts the device into sleep/power off mode.
+8. `KEY`: Pass GPIO controls to the macropad.
 
 ## Schematics
 <img src="Assets/schematics.svg">
