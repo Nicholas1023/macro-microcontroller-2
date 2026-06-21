@@ -41,6 +41,7 @@ main
  │     ├── macro-microcontroller-basic.c ← Firmware source file
  │     └── macro-microcontroller-basic.uf2 ← Compiled firmware
  │
+ ├── JOURNAL.md ← Devlogs
  ├── README.md ← This file
  ├── LICENSE.txt ← License
  └── schematics.pdf ← Schematics
