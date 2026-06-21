@@ -5539,7 +5539,7 @@
 	)
 	(rectangle
 		(start 153.035 76.835)
-		(end 201.295 120.65)
+		(end 204.47 120.65)
 		(stroke
 			(width 0)
 			(type default)
@@ -13246,7 +13246,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TMB12A24"
+		(property "Value" "HMB1206-03"
 			(at 190.5 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13290,7 +13290,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C96078"
+		(property "LCSC" "C96101"
 			(at 186.69 102.87 0)
 			(hide yes)
 			(show_name no)

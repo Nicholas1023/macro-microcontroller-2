@@ -50,7 +50,7 @@ main
 ## Bill of Materials (Excluding Do Not Populate)
 |Component|Ref Designator|Qty|Footprint|
 |---------|--------------|---|---------|
-|TMB12A24|BZ1|1|Buzzer_12x9.5RM7.6|
+|HMB1206-03|BZ1|1|Buzzer_12x9.5RM7.6|
 |Capacitor 0.1uF|C1, C2, C3, C4, C5, C6, C7, C10, C11|9|0402|
 |Capacitor 8pF|C8, C9|2|0402|
 |THT LED|D1, D2, D3|3|LED_D5.0mm|

@@ -4133,6 +4133,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C84266"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ea2cee2-d566-418f-97a0-c05083733d7f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/14e6de9c-dcc5-4215-89fa-182695206d70")
 		(sheetname "/")
@@ -4811,6 +4824,19 @@
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "e38142c2-09f5-47f7-907c-d87a4b29461f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5156614"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a3e1da47-c7af-4167-ba99-b12ef526815c")
 			(effects
 				(font
 					(size 1 1)
@@ -11564,7 +11590,7 @@
 				)
 			)
 		)
-		(property "Value" "TMB12A24"
+		(property "Value" "HMB1206-03"
 			(at 3.8 7.4 0)
 			(layer "F.Fab")
 			(uuid "6832fe90-3f8f-4ff4-bbdb-7403ca0618aa")
@@ -11601,7 +11627,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C96078"
+		(property "LCSC" "C96101"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
