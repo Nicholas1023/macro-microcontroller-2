@@ -1,5 +1,14 @@
 ### Devlogs from <a href="https://stardance.hackclub.com/projects/21502">https://stardance.hackclub.com/projects/21502</a>
 
+## Created a documentation site for my microcontroller!
+### 23 June 2026, 2h 35m 8s
+In this devlog, I improved the documentation of my project by creating a simple website to share specifications, schematics, and provide a direct link to download firmware and 3D print files. You may view it at <a href="https://nicholas1023.github.io/macro-microcontroller-2">https://nicholas1023.github.io/macro-microcontroller-2</a>!
+
+### What I’ll be doing next
+Next, I will be ordering the PCB and electronic components and finally solder them together!
+
+<image src="Assets/macro-microcontroller-website.webp">
+
 ## Finished the enclosure and organised the repository!
 ### 20 June 2026, 3h 1m 11s
 Today, I have completed the 3D case for Macro Controller 2 and did some minor bug fixes for the BASIC Interpreter. I needed to reassign the GPIO pins from the first revision of the board.
