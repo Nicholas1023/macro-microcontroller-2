@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Macro Microcontroller 2 Documentation</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="nav">
+            <h1><a class="text-a" href="index.html">Macro Microcontroller 2</a></h1>
+            <div>
+                <a href="#hardware">Hardware Specifications</a>
+                <a href="#firmware">Firmware</a>
+                <a href="#enclosure">Enclosure</a>
+                <a target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2">View Repository</a>
+            </div>
+        </nav>
+        <main id="main">
+            <img src="assets/macro-microcontroller-2-transparent.png" width="50%" height="50%">
+            <p><a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2">Macro Microcontroller 2</a>, a macropad + microcontroller development board that controls GPIO pin output using keys with a custom BASIC interpreter firmware.</p>
+            <h1 id="hardware">Hardware Specifications</h1>
+            <p>Dimensions: 96.52 &times; 35.56 mm<br>Microcontroller: RP2040<br>Flash Memory: 4MiB<br>Power: 3.3V<br>View <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/schematics.pdf">schematics</a></p>
+            <h1 id="firmware">Firmware</h1>
+            <p>Macro Microcontroller BASIC is a custom BASIC interpreter for Macro Microcontroller 2. You can install it by holding the boot button and plugging it in to your computer. Download the following file and move it to the storage drive that appears.</p>
+            <p>Download <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/download/v0.0.1/macro-microcontroller-basic-0.0.1.uf2">macro-microcontroller-basic-0.0.1.uf2</a> via releases. View <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/Firmware%20Files/macro-microcontroller-basic.c">source code</a>.</p>
+            <p>SHA256 Checksum: <code>cf7207e1fda9459d1b3a9a067b971e83e3a1de94865f71f915484ab0d255d099</code></p>
+            <h1 id="enclosure">Enclosure</h1>
+            <img src="assets/enclosure-image.png" width="50%" height="50%">
+            <p>Download <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/download/v0.0.1/macro-microcontroller-enclosure.stl">macro-microcontroller-enclosure.stl</a> via releases.</p>
+            <p>SHA256 Checksum: <code>sha256:a6176e0141efacababaf55ffff9fe5474e967f91759d3cdd79113d45379f25ed</code></p>
+        </main>
+        <footer id="footer">
+            <small>&copy; 2026 Nicholas Lim. Open source under <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/LICENSE.txt">MIT License</a>.</small>
+        </footer>
+        <script>
+            document.getElementById("main").style.paddingTop = `${document.getElementById("nav").offsetHeight}px`;
+            document.getElementById("main").style.paddingBottom = `${document.getElementById("footer").offsetHeight}px`;
+        </script>
+    </body>
+</html>
