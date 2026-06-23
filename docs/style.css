@@ -57,10 +57,16 @@ a:hover {
     color: #c3d0ff;
 }
 
-code {
-    font-family: monospace;
+pre {
     background-color: lightgrey;
-    color: black;
     border-radius: 5px;
     border: 1px solid grey;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+code {
+    color: black;
+    font-family: monospace;
 }
