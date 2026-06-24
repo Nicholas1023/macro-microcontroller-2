@@ -35,6 +35,7 @@ View PCB file at https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNicholas1
 ## Repository Structure
 ```
 main
+ ├── /docs ← Documentation website files are here
  ├── /Assets ← Images and videos are here
  ├── /PCB Files ← .kicad_ files are here
  ├── /Production Files ← Gerber and BOM files are here
