@@ -1,5 +1,11 @@
 ### Devlogs from <a href="https://stardance.hackclub.com/projects/21502">https://stardance.hackclub.com/projects/21502</a>
 
+## More updates to the documentation site!
+### 24 June 2026, 1h 15m 23s
+Today, I changed the layout and content of the documentation website and made it responsive for mobile devices! I initially wanted to add a 3D viewer to display the `.glb` file for rendering, but it did not output the result I wanted. (The silkscreen was not appearing!) I’ll read up on more about it, and hopefully, I would be able to add the 3D model into my documentation!
+
+<img src="Assets/Journal/website-mobile.png">
+
 ## Created a documentation site for my microcontroller!
 ### 23 June 2026, 2h 35m 8s
 In this devlog, I improved the documentation of my project by creating a simple website to share specifications, schematics, and provide a direct link to download firmware and 3D print files. You may view it at <a href="https://nicholas1023.github.io/macro-microcontroller-2">https://nicholas1023.github.io/macro-microcontroller-2</a>!
@@ -7,7 +13,7 @@ In this devlog, I improved the documentation of my project by creating a simple 
 ### What I’ll be doing next
 Next, I will be ordering the PCB and electronic components and finally solder them together!
 
-<image src="Assets/macro-microcontroller-website.webp">
+<image src="Assets/Journal/macro-microcontroller-website.webp">
 
 ## Finished the enclosure and organised the repository!
 ### 20 June 2026, 3h 1m 11s
@@ -44,7 +50,7 @@ Creating the cutout for the USB connector took me about 15 mins as I needed to m
 Next, I'll be continuing with the enclosure design, adding a cover with a keyboard plate, and finally moving on to the BASIC interpreter firmware for it!
 
 <image src="Assets/macro-microcontroller-2.png">
-<image src="Assets/enclosure 2026-06-19.png">
+<image src="Assets/Journal/enclosure 2026-06-19.png">
 
 ## Finished routing my microcontroller board!
 ### 19 June 2026, 2h 1m 39s
@@ -59,7 +65,7 @@ Did most of the routing for the MCU and macropad segment today, but I might need
 ### What I'll be doing next
 Next, I'll be adding more silkscreen text, and maybe design an icon for my macropad + microcontroller board. I'll also be creating a custom enclosure for my device!
 
-<image src="Assets/PCB 2026-06-19.png">
+<image src="Assets/Journal/PCB 2026-06-19.png">
 
 ## Finished the schematics and a little of the BASIC Interpreter for my microcontroller board! 
 ### 18 June 2026, 2h 22m 57s
@@ -72,4 +78,4 @@ Next, I'll be adding more silkscreen text, and maybe design an icon for my macro
 ### What I'll be doing next
 Next, I will be focusing on the BASIC interpreter firmware, working on variable assignment and math operations and testing it on a real pico board! Also, I will be starting on the layout and BOM as I have completed the schematics!
 
-<image src="Assets/schematics 2026-06-18.png">
+<image src="Assets/Journal/schematics 2026-06-18.png">
