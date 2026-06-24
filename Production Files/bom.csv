@@ -12,7 +12,7 @@ J4,PinHeader_1x05_P2.54mm_Vertical,1,GPIO,C5156614
 M1,PinHeader_1x02_P2.54mm_Vertical,1,Motor_DC,C2905434
 "R1, R6",0402,2,27ohm,C25156
 "R2, R4, R5, R7",0402,4,220ohm,C25091
-"R3, R8",0402,2,5kohm,C5948099
+"R3, R8, R9",0402,3,5kohm,C5948099
 "RV1, RV2",Potentiometer_Vishay_T73YP_Vertical,2,Pot,C6278770
 "SW1, SW2, SW3",SW_Cherry_MX_1.00u_PCB,3,Button,
 SW4,SW_Push_SPST_NO_Alps_SKRK,1,Reset,C115357

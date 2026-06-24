@@ -64,7 +64,7 @@ main
 |2.54 1x02 Pin|M1|1|PinHeader_1x02_P2.54mm_Vertical|
 |Resistor 27ohm|R1, R6|2|0402|
 |Resistor 220ohm|R2, R4, R5, R7|4|0402|
-|Resistor 5kohm|R3, R8|2|0402|
+|Resistor 5kohm|R3, R8, R9|3|0402|
 |Potentiometer|RV1, RV2|2|Potentiometer_Vishay_T73YP_Vertical|
 |Cherry MX Keys|SW1, SW2, SW3|3|SW_Cherry_MX_1.00u_PCB|
 |Reset & Boot Button|SW4, SW6|2|SW_Push_SPST_NO_Alps_SKRK|
