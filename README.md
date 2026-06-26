@@ -75,3 +75,6 @@ main
 |W25Q128JVP|U4|1|WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm|
 |TPS76350|U6|1|SOT-23-5|
 |NX3225SA-12MHz|Y1|1|Crystal_SMD_3225-4Pin_3.2x2.5mm|
+
+## Attribution
+Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for license and copyright notice.
