@@ -77,4 +77,4 @@ main
 |NX3225SA-12MHz|Y1|1|Crystal_SMD_3225-4Pin_3.2x2.5mm|
 
 ## Attribution
-Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for license and copyright notice.
+Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for the Pico SDK license and copyright notice.
