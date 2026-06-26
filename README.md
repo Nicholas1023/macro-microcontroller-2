@@ -37,13 +37,11 @@ View PCB file at https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNicholas1
 main
  ├── /docs ← Documentation website files are here
  ├── /Assets ← Images and videos are here
+ │     └── /Journal ← Images for JOURNAL.md
  ├── /PCB Files ← .kicad_ files are here
  ├── /Production Files ← Gerber and BOM files are here
  ├── /Printing Files ← STLs are here
  ├── /Firmware Files ← Firmware files are here
- │     ├── macro-microcontroller-basic.c ← Firmware source file
- │     └── macro-microcontroller-basic.uf2 ← Compiled firmware
- │
  ├── JOURNAL.md ← Devlogs
  ├── README.md ← This file
  ├── LICENSE.txt ← License
