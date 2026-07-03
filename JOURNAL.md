@@ -12,7 +12,7 @@ Here's a sample program you could run that generates a random number, stores it 
 ```basic
 10 let x = rnd
 20 lsvar
-30 print rnd
+30 print x
 ```
 Now, I'll be working on support for comments in my interpreter and wait for my parts to come. I can't wait to assemble my macropad + dev board!
 
