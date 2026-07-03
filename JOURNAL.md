@@ -1,5 +1,23 @@
 ### Devlogs from <a href="https://stardance.hackclub.com/projects/21502">https://stardance.hackclub.com/projects/21502</a>
 
+## Updated the firmware and ordered my PCB and parts!
+### 3 July 2026, 2h 55m 43s
+In this devlog, I've added a new function to my custom BASIC interpreter for my development board, and finally sent my PCB for manufacturing!
+
+It took me quite a while to write the random number function that the old BASIC interpreters used to have: `RND`. I did many rounds of trial and error to finally create a working code (the previous code was returning either nothing or throwing compiler errors due to data types):
+```c
+printf("%f\n", (float)rand() / (float)RAND_MAX);
+```
+Here's a sample program you could run that generates a random number, stores it in a variable and prints it:
+```basic
+10 let x = rnd
+20 lsvar
+30 print rnd
+```
+Now, I'll be working on support for comments in my interpreter and wait for my parts to come. I can't wait to assemble my macropad + dev board!
+
+<img src="Assets/Journal/firmware 2026-07-03.png">
+
 ## More updates to the documentation site!
 ### 24 June 2026, 1h 15m 23s
 Today, I changed the layout and content of the documentation website and made it responsive for mobile devices! I initially wanted to add a 3D viewer to display the `.glb` file for rendering, but it did not output the result I wanted. (The silkscreen was not appearing!) I’ll read up on more about it, and hopefully, I would be able to add the 3D model into my documentation!
