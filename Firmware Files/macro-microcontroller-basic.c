@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 /*
-Macro Microcontroller BASIC, Version 0.0.1.
+Macro Microcontroller BASIC, Version 0.0.2.
 PCB files for Macro Microcontroller 2 are available at
 https://github.com/Nicholas1023/macro-microcontroller-2.
 
@@ -28,6 +28,7 @@ SOFTWARE.
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "pico/stdlib.h"
 #include "pico/sync.h"
@@ -94,7 +95,7 @@ void main() {
         gpio_put(LED2, 0);
         gpio_put(LED3, 0);
         gpio_put(BELL, 0);
-        printf("Macro Microcontroller BASIC Version 0.0.1.\nCopyright (C) 2025-2026 Nicholas Lim.\n");
+        printf("Macro Microcontroller BASIC Version 0.0.2.\nCopyright (C) 2025-2026 Nicholas Lim.\n");
         volatile uint32_t stack_var;
         printf("%d bytes of RAM free.\n", (uint32_t)&stack_var - (uint32_t)&end);
         printf("Ready.\n");
@@ -155,6 +156,8 @@ void interpretermain() {
                 sleep_ms(100);
                 gpio_put(BELL, 0);
                 printf("BELL\n");
+            } else if (strcasecmp(statement, "RND") == 0) {
+                printf("%f\n", (float)rand() / (float)RAND_MAX);
             }
 
         } else if (strcasecmp(statement, "GPIO") == 0) {
@@ -186,7 +189,13 @@ void interpretermain() {
             variable[0] = strdup(statement);
             statement = strtok(NULL, " ");
             statement = strtok(NULL, "\n");
-            variable[1] = strdup(statement);
+            if (strcasecmp(statement, "RND") == 0) {
+                char rndtext[8];
+                sprintf(rndtext, "%.6f", (float)rand() / (float)RAND_MAX);
+                variable[1] = rndtext;
+            } else {
+                variable[1] = strdup(statement);
+            }
 
         } else if (strcasecmp(statement, "END\n") == 0) {
             variable[0] = "";
