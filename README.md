@@ -26,6 +26,7 @@ A BASIC interpreter written in C for Macro Microcontroller, providing a simple c
 6. `END`: Clears variable and reset line numbers.
 7. `EXIT`: Puts the device into sleep/power off mode.
 8. `KEY`: Pass GPIO controls to the macropad.
+9. `REM`: Add comments to your program.
 
 ## Schematics
 <img src="Assets/schematics.svg">

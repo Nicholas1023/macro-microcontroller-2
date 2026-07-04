@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 /*
-Macro Microcontroller BASIC, Version 0.0.2.
+Macro Microcontroller BASIC, Version 0.0.3.
 PCB files for Macro Microcontroller 2 are available at
 https://github.com/Nicholas1023/macro-microcontroller-2.
 
@@ -95,7 +95,7 @@ void main() {
         gpio_put(LED2, 0);
         gpio_put(LED3, 0);
         gpio_put(BELL, 0);
-        printf("Macro Microcontroller BASIC Version 0.0.2.\nCopyright (C) 2025-2026 Nicholas Lim.\n");
+        printf("Macro Microcontroller BASIC Version 0.0.3.\nCopyright (C) 2025-2026 Nicholas Lim.\n");
         volatile uint32_t stack_var;
         printf("%d bytes of RAM free.\n", (uint32_t)&stack_var - (uint32_t)&end);
         printf("Ready.\n");
@@ -217,7 +217,9 @@ void interpretermain() {
                 printf("with value %s\n", variable[1]);
             }
             
-        } else { printf("Error: Invalid statement.\n"); }
+        } else if (strcasecmp(statement, "REM") != 0) {
+            printf("Error: Invalid statement.\n");
+        }
     }
 }
 
