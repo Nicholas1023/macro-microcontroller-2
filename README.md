@@ -28,6 +28,8 @@ A BASIC interpreter written in C for Macro Microcontroller, providing a simple c
 8. `KEY`: Pass GPIO controls to the macropad.
 9. `REM`: Add comments to your program.
 
+For example programs, see <a href="Firmware Files/example.bas">Firmware Files/example.bas</a>.
+
 ## Schematics
 <img src="Assets/schematics.svg">
 
