@@ -1,5 +1,5 @@
-REM Macro Microcontroller BASIC Example Programs
-REM Note: line numbers are automatically appended, hence there is no need to add line numbers.
+REM Macro Microcontroller BASIC Example Program
+REM Note: line numbers are automatically appended, hence there is no need to add them.
 REM This example program (example.bas) is released into the public domain.
 
 REM Example 1: Hello world!

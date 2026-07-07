@@ -57,7 +57,7 @@ a:hover {
     color: #c3d0ff;
 }
 
-pre {
+pre, .code {
     background-color: lightgrey;
     border-radius: 5px;
     border: 1px solid grey;
@@ -65,9 +65,22 @@ pre {
     white-space: pre-wrap;
     word-break: break-all;
     padding: 0;
+    text-align: left;
 }
 
 code {
     color: black;
     font-family: monospace;
+}
+
+.code {
+    padding: 2.5px;
+}
+
+li {
+    padding: 2.5px;
+}
+
+b {
+    padding: 0;
 }

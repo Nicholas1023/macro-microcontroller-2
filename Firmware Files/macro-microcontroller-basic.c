@@ -202,6 +202,7 @@ void interpretermain() {
             variable[1] = "";
             line_count = 0;
             printf("Ready.\n");
+            
         } else if (strcasecmp(statement, "EXIT\n") == 0) {
             variable[0] = "";
             variable[1] = "";
