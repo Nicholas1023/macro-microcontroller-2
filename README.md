@@ -5,6 +5,8 @@ Documentation: <a href="https://nicholaslim.me/macro-microcontroller-2">https://
 
 <img src="Assets/board.jpg">
 
+View hardware demonstration at <a href="https://nicholaslim.me/macro-microcontroller-2/assets/hardware-demo.mp4">https://nicholaslim.me/macro-microcontroller-2/assets/hardware-demo.mp4</a>!
+
 ## What's New?
 1. Microcontroller unit directly soldered on board!
 2. More output devices with speed and volume adjustments (Buzzer and motor).
