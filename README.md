@@ -3,7 +3,7 @@ A macropad and RP2040 microcontroller development board that allows you to contr
 
 Documentation: <a href="https://nicholaslim.me/macro-microcontroller-2">https://nicholaslim.me/macro-microcontroller-2</a>
 
-<img src="Assets/macro-microcontroller-2.png">
+<img src="Assets/board.jpg">
 
 ## What's New?
 1. Microcontroller unit directly soldered on board!
