@@ -1,5 +1,23 @@
 ### Devlogs from <a href="https://stardance.hackclub.com/projects/21502">https://stardance.hackclub.com/projects/21502</a>
 
+## Finally received the board and soldered the parts on!
+### 11 July 2026, 3h 40m 21s
+
+In this devlog, I made some changes to the firmware and released v0.0.3 that adds support for comments:
+```basic
+10 REM This is a comment that will be ignored!
+20 PRINT "Hello world!"
+```
+I've also added a more detailed [programming guide](https://nicholas1023.github.io/macro-microcontroller-2/programming.html) for my custom BASIC Interpreter.
+
+## Difficulties I've faced
+I had some trouble soldering the keyboard switches on as it was moving everywhere. I've attempted applying tape, but it did not work as the temperature was too high. 
+
+I'll be tidying up the repo and get ready to finally ship🚢 my project!
+
+<img src="Assets/Journal/board 2026-07-11.jpeg">
+<img src="Assets/Journal/boot 2026-07-11.mp4">
+
 ## Updated the firmware and ordered my PCB and parts!
 ### 3 July 2026, 2h 55m 43s
 In this devlog, I've added a new function to my custom BASIC interpreter for my development board, and finally sent my PCB for manufacturing!
