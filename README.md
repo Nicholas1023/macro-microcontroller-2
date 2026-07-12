@@ -50,6 +50,7 @@ main
  ├── JOURNAL.md ← Devlogs
  ├── README.md ← This file
  ├── LICENSE.txt ← License
+ ├── macro-microcontroller-2-datasheet.pdf ← Datasheet
  └── schematics.pdf ← Schematics
  ```
 
