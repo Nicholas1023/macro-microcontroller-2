@@ -23,7 +23,7 @@
             <p>Macro Microcontroller BASIC is an interpreter based on the BASIC language for microcontroller development boards, specifically the <a class="text-a" href="index.html">Macro Microcontroller</a>.</p>
             <h2>Installation</h2>
             <ol>
-                <li><p>First of all, download macro-microcontroller-basic-0.0.3.uf2 via <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/tag/v0.0.3">releases</a>. Current version: 0.0.3</p></li>
+                <li><p>First, download macro-microcontroller-basic-0.0.3.uf2 from <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/tag/v0.0.3">releases</a>. Current version: 0.0.3</p></li>
                 <li><p>Next, plug in your development board while holding the Boot button. A storage drive will appear on your computer.</p></li>
                 <li><p>Move macro-microcontroller-basic-0.0.3.uf2 into the storage drive. Your development board is now running Macro Microcontroller BASIC!</p></li>
                 <li><p>Install a serial terminal application on your computer and connect it to the board. If successful, you should see the following:</p><pre><code style="padding: 0;">Macro Microcontroller BASIC Version 0.0.3.<br>Copyright (C) 2025-2026 Nicholas Lim.<br>521928 bytes of RAM free.<br>Ready.<br>10 </code></pre><p>If not, try sending <code class="code">PRINT "It works!"</code>. If "It works!" is sent back to the serial terminal, you have successfully installed Macro Microcontroller BASIC.</p></li>
@@ -47,6 +47,7 @@
             <h2>Predefined Values</h2>
             <ul>
                 <li><code class="code">IO*</code>: Set GPIO pins 1, 2 or 3 to high.</li>
+                <li><code class="code">LED*</code>: Set LEDs 1, 2 or 3 to high.</li>
                 <li><code class="code">BELL</code>: Sounds the builtin buzzer.</li>
                 <li><code class="code">MOTOR</code>: Sets motor pins to high.</li>
                 <li><code class="code">RND</code>: Generates a random floating-point integer less than 1.</li>
