@@ -54,7 +54,7 @@ main
  └── schematics.pdf ← Schematics
  ```
 
-## Bill of Materials (Excluding Do Not Populate)
+## Bill of Materials (Excluding DNP)
 |Component|Ref Designator|Qty|Footprint|
 |---------|--------------|---|---------|
 |HMB1206-03|BZ1|1|Buzzer_12x9.5RM7.6|
