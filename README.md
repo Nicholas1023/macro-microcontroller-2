@@ -40,7 +40,7 @@ View PCB file at https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNicholas1
 ## Repository Structure
 ```
 main
- ├── /docs ← Documentation website files are here
+ ├── /docs ← Documentation website and datasheet files are here
  ├── /Assets ← Images and videos are here
  │     └── /Journal ← Images for JOURNAL.md
  ├── /PCB Files ← .kicad_ files are here
@@ -50,7 +50,6 @@ main
  ├── JOURNAL.md ← Devlogs
  ├── README.md ← This file
  ├── LICENSE.txt ← License
- ├── macro-microcontroller-2-datasheet.pdf ← Datasheet
  └── schematics.pdf ← Schematics
  ```
 
@@ -80,5 +79,11 @@ main
 |TPS76350|U6|1|SOT-23-5|
 |NX3225SA-12MHz|Y1|1|Crystal_SMD_3225-4Pin_3.2x2.5mm|
 
-## Attribution
+## Legal
+Hardware files ("<a href="PCB Files">PCB Files</a>", "<a href="Printing Files">Printing Files</a>", "<a href="Production Files">Production Files</a>", "<a href="schematics.pdf">schematics.pdf</a>") are licensed under the terms of the CERN-OHL-P-2.0 License. See <a href="LICENSE.txt">LICENSE.txt</a>.
+
+Documentation files ("<a href="docs">docs</a>", "<a href="Assets">Assets</a>", "<a href="JOURNAL.md">JOURNAL.md</a>") are licensed under the terms of the MIT License. See <a href="docs/LICENSE.txt">docs/LICENSE.txt</a>.
+
+For firmware files ("<a href="Firmware Files">Firmware Files</a>"), please refer to the respective file headers for licensing and copyright information.
+
 Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for the Pico SDK license and copyright notice.
