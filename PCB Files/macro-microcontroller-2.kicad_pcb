@@ -11,7 +11,7 @@
 		(title "Macro Microcontroller 2")
 		(date "2026-06-25")
 		(rev "2")
-		(company "Designed by Nicholas Lim. Open source under the MIT License.")
+		(company "Designed by Nicholas Lim. Open source under the CERN-OHL-P-2.0 License.")
 		(comment 1 "Source: https://github.com/Nicholas1023/macro-microcontroller-2")
 		(comment 2 "Documentation: https://nicholas1023.github.io/macro-microcontroller-2")
 	)
