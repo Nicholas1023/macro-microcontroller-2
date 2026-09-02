@@ -116,4 +116,4 @@ Documentation files ("<a href="docs">docs</a>", "<a href="Assets">Assets</a>", "
 
 For firmware files ("<a href="Firmware Files">Firmware Files</a>"), please refer to the respective file headers for licensing and copyright information.
 
-Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for the Pico SDK license and copyright notice.
+Macro Microcontroller BIOS, Macro Microcontroller DOS and Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for the Pico SDK license and copyright notice.
