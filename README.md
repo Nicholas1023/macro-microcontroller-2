@@ -18,7 +18,37 @@ Macro Microcontroller 2 allows you to control GPIO pins using macropad-like keys
 ## Enclosure
 <img src="Assets/enclosure-image.png">
 
-## Macro Microcontroller BASIC Interpreter (Default Firmware)
+## Firmware
+### Macro Microcontroller BIOS
+A basic BIOS-like firmware, which performs basic POST routines and reports information on the device. <a href="Firmware Files/macro-microcontroller-bios.c">Source code</a>.
+```
+ _  _
+| \/ | Macro Microcontroller BIOS Version 0.0.1.
+|_\/_| Copyright (C) 2025-2026 Nicholas Lim.
+
+Device: Macro Microcontroller 2 (RP2040 @ 125MHz)
+Serial Number: E465B8F41B502E30
+RAM Free: 254K OK
+Serial Status: Connected
+
+Press SW1 to enter Macro Microcontroller BASIC.
+Press SW2 to enter BOOTSEL mode.
+
+Booting system...
+```
+
+### Macro Microcontroller Disk Operating System (work in progress)
+A simple DOS-like environment that boots from the BIOS. <a href="Firmware Files/macro-microcontroller-bios+dos.c">Source code</a>.
+
+Available commands:
+1. `HELP`: Launches the help guide.
+2. `ECHO`: Echoes text.
+3. `LS`: Show directory listing.
+4. `SYSTEM`: Starts another Macro Microcontroller DOS console.
+5. `EXIT`: Stops all processes for power off.
+
+
+### Macro Microcontroller BASIC Interpreter
 A BASIC interpreter written in C for Macro Microcontroller, providing a simple coding environment via a serial terminal. You may view a demo at <a href="Assets/firmware-demo.mp4">Assets/firmware-demo.mp4</a>. Currently available statements:
 1. `PRINT`: Outputs text to the serial terminal.
 2. `LET`: Assigns a value (integer, float or string) to a variable (Only one variable is allowed for now).

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: 2025-2026 Nicholas Lim <nicholas_lim@bbsshack.club>
-// Macro Microcontroller BIOS Version 0.0.1.
+// Macro Microcontroller BIOS + Macro Microcontroller DOS Version 0.0.1.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,7 +47,7 @@ bool userconfig = true;
 void interpreter();
 void blink();
 void gpio_control();
-void OS();
+void DOS();
 
 int main() {
     stdio_init_all();
@@ -143,14 +143,38 @@ int main() {
         interpreter();
     } else {
         printf("\n\n");
-        OS();
+        DOS();
     }
     printf("Stopping all system processes... You may turn off your device now.");
     while (1) __wfi();
 }
 
-void OS() {
-    // Add your custom "OS" here!
+void DOS() {
+    printf("Macro Microcontroller Disk Operating System Version 0.0.1.\nCopyright (C) 2026 Nicholas Lim.\n");
+    while (true) {;
+        printf("Drive A> ");
+        memset(DOS_input, 0, 51);
+        fgets(DOS_input, 51, stdin);
+        printf("%s", DOS_input);
+        char *DOS_statement = strtok(DOS_input, " ");
+        if (DOS_statement == NULL) continue;
+        if (strcasecmp(DOS_statement, "ECHO") == 0) {
+            DOS_statement = strtok(NULL, "\n");
+            if (DOS_statement == NULL) continue;
+            printf("%s\n", DOS_statement);
+        } else if (strcasecmp(DOS_statement, "HELP\n") == 0 || strcasecmp(DOS_statement, "HELP.PROG\n") == 0) {
+            printf("Macro Microcontroller DOS Help Guide\nAvailable commands:\n- HELP: Launches the help guide.\n- ECHO: Echoes text.\n- LS: Show directory listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n");
+        } else if (strcasecmp(DOS_statement, "LS\n") == 0) {
+            uint32_t free_flash = (16 * 1024 * 1024) - (((uintptr_t)&__flash_binary_end) - XIP_BASE);
+            printf("Storage: %uMB free\nDirectory listing of Drive A:\nName           Last modified\n─────────────────────────────────\nSYSTEM.PROG    08-15-2026 20:37\nHELP.PROG      08-16-2026 17:02\n─────────────────────────────────\n", free_flash / 1024 / 1024);
+        } else if (strcasecmp(DOS_statement, "SYSTEM\n") == 0 || strcasecmp(DOS_statement, "SYSTEM.PROG\n") == 0) {
+            DOS();
+        } else if (strcasecmp(DOS_statement, "EXIT\n") == 0) {
+            return;
+        } else {
+            printf("Command or file does not exist.\n");
+        }
+    }
 }
 
 void blink(int pin) {
