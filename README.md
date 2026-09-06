@@ -1,7 +1,9 @@
 # Macro Microcontroller 2
 A macropad and RP2040 microcontroller development board that allows you to control GPIOs with keyboard keys combined on a single PCB, with a custom BASIC interpreter.
 
-Documentation: <a href="https://nicholaslim.me/macro-microcontroller-2">https://nicholaslim.me/macro-microcontroller-2</a>
+Documentation page: <a href="https://nicholaslim.me/macro-microcontroller-2">https://nicholaslim.me/macro-microcontroller-2</a>
+
+Hack Club Stardance Challenge project: <a href="https://stardance.hackclub.com/projects/21502">https://stardance.hackclub.com/projects/21502</a>
 
 <img src="Assets/board.jpg">
 
@@ -11,12 +13,16 @@ View hardware demonstration at <a href="https://nicholaslim.me/macro-microcontro
 1. Microcontroller unit directly soldered on board!
 2. More output devices with speed and volume adjustments (Buzzer and motor).
 3. More ways to power the board (Barrel jack, USB, GPIO pins).
+4. Custom BASIC interpreter and a disk operating system.
 
 ## What Does it Do?
-Macro Microcontroller 2 allows you to control GPIO pins using macropad-like keys and from the serial terminal using the built-in <a href="Firmware Files/macro-microcontroller-basic.c">Macro Microcontroller BASIC Interpreter</a>. It offers more ways to control GPIOs by having builtin keys that can be programmed to your own needs.
+Macro Microcontroller 2 allows you to control GPIO pins using macropad-like keys and from the serial terminal using the built-in <a href="Firmware Files/macro-microcontroller-basic.c">Macro Microcontroller BASIC Interpreter</a> or a <a href="Firmware Files/macro-microcontroller-bios+dos.c">disk operating system</a> for simple uses. It offers more ways to control GPIOs by having builtin keys that can be programmed to your own needs.
 
 ## Enclosure
 <img src="Assets/enclosure-image.png">
+
+## Datasheet
+For more details on the hardware, please read the <a href="docs/assets/macro-microcontroller-2-datasheet.pdf">datasheet</a>!
 
 ## Firmware
 ### Macro Microcontroller BIOS
@@ -27,7 +33,7 @@ A basic BIOS-like firmware, which performs basic POST routines and reports infor
 |_\/_| Copyright (C) 2025-2026 Nicholas Lim.
 
 Device: Macro Microcontroller 2 (RP2040 @ 125MHz)
-Serial Number: E465B8F41B502E30
+Serial Number: ****************
 RAM Free: 254K OK
 Serial Status: Connected
 
@@ -37,8 +43,9 @@ Press SW2 to enter BOOTSEL mode.
 Booting system...
 ```
 
-### Macro Microcontroller Disk Operating System
+### Macro Microcontroller DOS
 A simple DOS-like environment that boots from the BIOS. <a href="Firmware Files/macro-microcontroller-bios+dos.c">Source code</a>.
+
 Available commands (* denotes optional parameters):
 1. `HELP`: Launches the help guide.
 2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: `CALCULATE [Number] [+ - * / ^ sqrt] [Number]`
@@ -53,7 +60,9 @@ Available commands (* denotes optional parameters):
 11. `UPTIME`: Shows device uptime.
 
 ### Macro Microcontroller BASIC Interpreter
-A BASIC interpreter written in C for Macro Microcontroller, providing a simple coding environment via a serial terminal. You may view a demo at <a href="Assets/firmware-demo.mp4">Assets/firmware-demo.mp4</a>. Currently available statements:
+A BASIC interpreter written in C for Macro Microcontroller, providing a simple coding environment via a serial terminal. You may view a demo at <a href="Assets/firmware-demo.mp4">Assets/firmware-demo.mp4</a>.
+
+Currently available statements:
 1. `PRINT`: Outputs text to the serial terminal.
 2. `LET`: Assigns a value (integer, float or string) to a variable (Only one variable is allowed for now).
 3. `INPUT`: Assigns a value (integer, float or string) to a variable via user input.

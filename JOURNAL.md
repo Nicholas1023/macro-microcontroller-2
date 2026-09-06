@@ -1,5 +1,56 @@
 ### Devlogs from <a href="https://stardance.hackclub.com/projects/21502">https://stardance.hackclub.com/projects/21502</a>
 
+## New Commands for DOS!
+### 6 September 2026, 2h 25m 38s
+
+In this devlog, I added new commands for my OS:
+
+- `CALCULATE`: Performs basic operations on 2 numbers. Usage: `CALCULATE [Number] [+ - * / ^ sqrt] [Number]`
+- `GPIO`: Turns on a specified GPIO for 1 second. Usage: `GPIO [LED# IO# BELL MOTOR]`
+- `VERSION`: Shows the release version.
+- `REBOOT`: Reboots the system. Usage: `REBOOT -m [BASIC BOOTSEL]*`
+- `INFO`: Displays device and memory information.
+- `UPTIME`: Shows device uptime.
+
+I took quite a while to find out how to make the `CALCULATE` command work. Initially, 1/3 was returning 0. Turns out the problem was due to me using integers instead of doubles!
+
+Here's a demo video of the OS!
+
+## Some updates to the documentation site!
+### 2 September 2026, 30m 21s
+
+Since I added a new firmware, I have to update the downloads section of my site! It took me quite a while to organise my repo a little bit, as the firmware files were getting a little messier and releases getting more complicated as I have 2 firmware now!
+
+Next, I’ll be working on the DOS, adding more commands to the system!
+
+## New firmware update!
+### 2 September 2026, 4h 6m 46s
+
+Previously, I was asking myself: How can I make my device look more like an old computer?
+
+When I was turning on an old desktop I have at home, I saw the BIOS screen due to CMOS errors, and this was where I got an inspiration for a new firmware update.
+
+In this devlog, I redid the firmware, added a BIOS-like CLI, while still keeping the original BASIC interpreter as a fallback if no bootable "OS" was found. Here's what it looks like:
+```
+ _  _
+| \/ | Macro Microcontroller BIOS Version 0.0.1.
+|_\/_| Copyright (C) 2025-2026 Nicholas Lim.
+
+Device: Macro Microcontroller 2 (RP2040 @ 125MHz)
+Serial Number: ************
+RAM Free: 254K OK
+Serial Status: Connected
+
+Press SW1 to enter Macro Microcontroller BASIC.
+Press SW2 to enter BOOTSEL mode.
+
+Booting system...
+```
+
+The UI was inspired by the old BIOS POST screens from the 1980s. As I wanted a retro feel to my microcontroller, I thought that a BIOS-like system would look nice to it!
+
+Thanks for reading!
+
 ## Finally received the board and soldered the parts on!
 ### 11 July 2026, 3h 40m 21s
 

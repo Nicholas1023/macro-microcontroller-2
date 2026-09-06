@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Macro Microcontroller 2 Documentation - 404</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="nav">
+            <h2><a class="text-a" href="index.html">Macro Microcontroller 2</a></h2>
+            <div id="navmenu">
+                <a href="#hardware">Hardware Specifications</a>
+                <a href="#downloads">Downloads</a>
+                <a href="programming.html">Programming Guide</a>
+                <a href="https://editor.nicholaslim.me/macro-microcontroller.html" target="_blank">Web Editor</a>
+                <a target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2">View Repository</a>
+            </div>
+        </nav>
+        <main id="main" style="display: flex; flex-direction: column; height: 100vh;">
+            <div class="errorpage">
+                <h2 style="font-size: 5ch;"><code style="color: #fa2020; font-size: 2.5ch; background-color: rgba(0, 0, 0, 0); border: none;">404</code> Not Found!</h2>
+                <p style="line-height: 4ch;">Oops! Seems like this page does not exist.</p>
+                <a href="index.html" class="button" style="width: fit-content;">Go to Homepage</a>
+            </div>
+        </main>
+        <footer id="footer">
+            <small>&copy; 2026 Nicholas Lim. Documentation is open source under the <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/docs/LICENSE.txt">MIT License</a>.</small>
+        </footer>
+        <script>
+            document.getElementById("main").style.paddingTop = `${document.getElementById("nav").offsetHeight}px`;
+            document.getElementById("main").style.paddingBottom = `${document.getElementById("footer").offsetHeight}px`;
+            if (window.innerWidth < 600) {
+                document.getElementById("navmenu").style.display = "none";
+                document.getElementById("nav").style.justifyContent = "center";
+                document.getElementById("banner").style.width = "100%";
+                document.getElementById("banner").style.height = "100%";
+                document.getElementById("main").style.maxWidth = `${window.innerWidth - 20}px`;
+            }
+        </script>
+    </body>
+</html>

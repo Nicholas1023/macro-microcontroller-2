@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2025-2026 Nicholas Lim <nicholas_lim@bbsshack.club>
 /*
 Macro Microcontroller BASIC, Version 0.0.3.
 PCB files for Macro Microcontroller 2 are available at
