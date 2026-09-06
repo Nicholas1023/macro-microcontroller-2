@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: 2025-2026 Nicholas Lim <nicholas_lim@bbsshack.club>
-// Macro Microcontroller BIOS Version 0.0.1.
+// Macro Microcontroller BIOS Version 0.0.2.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,10 +35,10 @@ bool lastSW2 = false;
 
 char *variable[] = {"", ""};
 char input[51];
-char DOS_input[51];
 char user_input[51];
 char command[51];
 int line_count = 0;
+int mode = 0;
 
 /* Change the following to true to add your own "OS", or false to boot to Macro
 Microcontroller BASIC by default (No bootable media found). */
@@ -47,7 +47,7 @@ bool userconfig = true;
 void interpreter();
 void blink();
 void gpio_control();
-void OS();
+void DOS();
 
 int main() {
     stdio_init_all();
@@ -78,7 +78,7 @@ int main() {
     gpio_pull_up(SW3);
     sleep_ms(4000);
     printf(" _  _\n");
-    printf("| \\/ | Macro Microcontroller BIOS Version 0.0.1.\n");
+    printf("| \\/ | Macro Microcontroller BIOS Version 0.0.2.\n");
     printf("|_\\/_| Copyright (C) 2025-2026 Nicholas Lim.\n\n");
     printf("Device: Macro Microcontroller 2 (RP2040 @ %.0fMHz)\n", clock_get_hz(clk_sys)/1e+6);
     pico_unique_board_id_t id;
@@ -116,12 +116,12 @@ int main() {
         bool currentSW1 = gpio_get(SW1);
         bool currentSW2 = gpio_get(SW2);
         uint32_t now = to_ms_since_boot(get_absolute_time());
-        if (!currentSW1 && lastSW1 && now - startup <= 2000) {
+        if (!currentSW1 && lastSW1 && now - startup <= 2000 || mode == 1) {
             sleep_ms(40);
             if (gpio_get(SW1)) {
                 interpreter();
             }
-        } if (!currentSW2 && lastSW2 && now - startup <= 2000) {
+        } if (!currentSW2 && lastSW2 && now - startup <= 2000 || mode == 2) {
             sleep_ms(40);
             if (gpio_get(SW2)) {
                 printf("Entering BOOTSEL mode...\n");

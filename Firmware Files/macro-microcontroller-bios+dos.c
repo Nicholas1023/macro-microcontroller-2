@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: 2025-2026 Nicholas Lim <nicholas_lim@bbsshack.club>
-// Macro Microcontroller BIOS + Macro Microcontroller DOS Version 0.0.1.
+// Macro Microcontroller BIOS + Macro Microcontroller DOS Version 0.0.2.
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "pico/stdlib.h"
 #include "pico/sync.h"
 #include "pico/bootrom.h"
@@ -39,9 +40,10 @@ char DOS_input[51];
 char user_input[51];
 char command[51];
 int line_count = 0;
+int mode = 0;
 
-/* Change the following to true to add your own "OS", or false to boot to Macro
-Microcontroller BASIC by default (No bootable media found). */
+/* Change the following to true to boot to Macro Microcontroller DOS, or false
+to boot to Macro Microcontroller BASIC by default (No bootable media found). */
 bool userconfig = true;
 
 void interpreter();
@@ -76,9 +78,9 @@ int main() {
     gpio_pull_up(SW1);
     gpio_pull_up(SW2);
     gpio_pull_up(SW3);
-    sleep_ms(4000);
+    sleep_ms(2000);
     printf(" _  _\n");
-    printf("| \\/ | Macro Microcontroller BIOS Version 0.0.1.\n");
+    printf("| \\/ | Macro Microcontroller BIOS Version 0.0.2.\n");
     printf("|_\\/_| Copyright (C) 2025-2026 Nicholas Lim.\n\n");
     printf("Device: Macro Microcontroller 2 (RP2040 @ %.0fMHz)\n", clock_get_hz(clk_sys)/1e+6);
     pico_unique_board_id_t id;
@@ -116,12 +118,12 @@ int main() {
         bool currentSW1 = gpio_get(SW1);
         bool currentSW2 = gpio_get(SW2);
         uint32_t now = to_ms_since_boot(get_absolute_time());
-        if (!currentSW1 && lastSW1 && now - startup <= 2000) {
+        if (!currentSW1 && lastSW1 && now - startup <= 2000 || mode == 1) {
             sleep_ms(40);
             if (gpio_get(SW1)) {
                 interpreter();
             }
-        } if (!currentSW2 && lastSW2 && now - startup <= 2000) {
+        } if (!currentSW2 && lastSW2 && now - startup <= 2000 || mode == 2) {
             sleep_ms(40);
             if (gpio_get(SW2)) {
                 printf("Entering BOOTSEL mode...\n");
@@ -150,7 +152,7 @@ int main() {
 }
 
 void DOS() {
-    printf("Macro Microcontroller Disk Operating System Version 0.0.1.\nCopyright (C) 2026 Nicholas Lim.\n");
+    printf("Macro Microcontroller Disk Operating System Version 0.0.2.\nCopyright (C) 2026 Nicholas Lim.\n");
     while (true) {;
         printf("Drive A> ");
         memset(DOS_input, 0, 51);
@@ -158,17 +160,120 @@ void DOS() {
         printf("%s", DOS_input);
         char *DOS_statement = strtok(DOS_input, " ");
         if (DOS_statement == NULL) continue;
-        if (strcasecmp(DOS_statement, "ECHO") == 0) {
+        if (strcasecmp(DOS_statement, "ECHO") == 0 || strcasecmp(DOS_statement, "ECHO.PROG") == 0) {
             DOS_statement = strtok(NULL, "\n");
             if (DOS_statement == NULL) continue;
             printf("%s\n", DOS_statement);
+
         } else if (strcasecmp(DOS_statement, "HELP\n") == 0 || strcasecmp(DOS_statement, "HELP.PROG\n") == 0) {
-            printf("Macro Microcontroller DOS Help Guide\nAvailable commands:\n- HELP: Launches the help guide.\n- ECHO: Echoes text.\n- LS: Show directory listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n");
-        } else if (strcasecmp(DOS_statement, "LS\n") == 0) {
+            printf("Macro Microcontroller DOS Help Guide\nAvailable commands (* denotes optional parameters):\n- HELP: Launches the help guide.\n- CALCULATE: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ sqrt] [Number]\n- ECHO: Echoes text.\n- LS: Show program listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n- GPIO: Turns on a specified GPIO for 1 second. Usage: GPIO [LED# IO# BELL MOTOR]\n- VERSION: Shows the release version.\n- REBOOT: Reboots the system. Usage: REBOOT -m [BASIC BOOTSEL]*\n- INFO: Displays device and memory information.\n- UPTIME: Shows device uptime.\n");
+        
+        } else if (strcasecmp(DOS_statement, "LS\n") == 0 || strcasecmp(DOS_statement, "LS.PROG") == 0) {
             uint32_t free_flash = (16 * 1024 * 1024) - (((uintptr_t)&__flash_binary_end) - XIP_BASE);
-            printf("Storage: %uMB free\nDirectory listing of Drive A:\nName           Last modified\n─────────────────────────────────\nSYSTEM.PROG    08-15-2026 20:37\nHELP.PROG      08-16-2026 17:02\n─────────────────────────────────\n", free_flash / 1024 / 1024);
+            printf("Storage: %uMB free\nProgram listing of Drive A:\nName             Last modified\n──────────────────────────────────\nSYSTEM.PROG      09-06-2026 09:02\nHELP.PROG        09-06-2026 10:21\nCALCULATE.PROG   09-06-2026 09:22\nREBOOT.PROG      09-06-2026 08:48\nECHO.PROG        09-06-2026 09:01\nLS.PROG          09-06-2026 10:00\nVERSION.PROG     09-06-2026 09:30\nGPIO.PROG        09-06-2026 10:00\nINFO.PROG        09-06-2026 10:09\nUPTIME.PROG      09-06-2026 10:23\n──────────────────────────────────\n", free_flash / 1024 / 1024);
+        
         } else if (strcasecmp(DOS_statement, "SYSTEM\n") == 0 || strcasecmp(DOS_statement, "SYSTEM.PROG\n") == 0) {
             DOS();
+        
+        } else if (strcasecmp(DOS_statement, "VERSION\n") == 0 || strcasecmp(DOS_statement, "VERSION.PROG\n") == 0) {
+            printf("Macro Microcontroller Disk Operating System Version 0.0.2 Release 09-06-2026.\nCopyright (C) 2026 Nicholas Lim. Open source under the MIT License.\nView source at https://github.com/Nicholas1023/macro-microcontroller-2.\n");
+        
+        } else if (strcasecmp(DOS_statement, "INFO\n") == 0 || strcasecmp(DOS_statement, "INFO.PROG\n") == 0) {
+            printf("Device: Macro Microcontroller 2\nProcessor: RP2040 @ %.0fMHz\n", clock_get_hz(clk_sys)/1e+6);
+            pico_unique_board_id_t id;
+            pico_get_unique_board_id(&id);
+            printf("Serial Number: ");
+            for (int i = 0; i < PICO_UNIQUE_BOARD_ID_SIZE_BYTES; i++) {
+                printf("%02X", id.id[i]);
+            }
+            volatile uint32_t stack_var;
+            printf("\nRAM Free: %dKB\n", ((uint32_t)&stack_var - (uint32_t)&end)/1024);
+            uint32_t free_flash = (16 * 1024 * 1024) - (((uintptr_t)&__flash_binary_end) - XIP_BASE);
+            printf("Flash Free: %uMB\n", free_flash / 1024 / 1024);
+        
+        } else if (strcasecmp(DOS_statement, "CALCULATE\n") == 0 || strcasecmp(DOS_statement, "CALCULATE.PROG\n") == 0) {
+            printf("Error: Missing parameters.\n");
+        
+        } else if (strcasecmp(DOS_statement, "CALCULATE") == 0 || strcasecmp(DOS_statement, "CALCULATE.PROG") == 0) {
+            char *calc[3];
+            for (int i=0; i<3; i++){
+                DOS_statement = strtok(NULL, " ");
+                if (DOS_statement != NULL) {
+                    calc[i] = strdup(DOS_statement);
+                } else {
+                    printf("Error: Missing parameters.\n");
+                    break;
+                }
+            }
+            double a = atof(calc[0]);
+            double b = atof(calc[2]);
+            if (strcmp(calc[1], "+") == 0) {
+                printf("%g", a + b);
+            } else if (strcmp(calc[1], "-") == 0) {
+                printf("%g", a - b);
+            } else if (strcmp(calc[1], "*") == 0) {
+                printf("%g", a * b);
+            } else if (strcmp(calc[1], "/") == 0) {
+                if (b == 0) {
+                    printf("Error: Division by zero.");
+                } else {
+                    printf("%g", a / b);
+                }
+            } else if (strcmp(calc[1], "^") == 0) {
+                printf("%g", pow(a, b));
+            } else if (strcmp(calc[1], "sqrt") == 0) {
+                printf("%g", pow(a, 1.0/b));
+            } else {
+                printf("Error: Operation not recognised or available.");
+            }
+            printf("\n");
+        
+        } else if (strcasecmp(DOS_statement, "GPIO\n") == 0 || strcasecmp(DOS_statement, "GPIO.PROG\n") == 0) {
+            printf("Error: Missing parameters.\n");
+        
+        } else if (strcasecmp(DOS_statement, "GPIO") == 0 || strcasecmp(DOS_statement, "GPIO.PROG") == 0) {
+            DOS_statement = strtok(NULL, "\n");
+            if (DOS_statement == NULL) continue;
+            if (strcasecmp(DOS_statement, "IO1") == 0) blink(IO1);
+            else if (strcasecmp(DOS_statement, "IO2") == 0) blink(IO2);
+            else if (strcasecmp(DOS_statement, "IO3") == 0) blink(IO3);
+            else if (strcasecmp(DOS_statement, "LED1") == 0) blink(LED1);
+            else if (strcasecmp(DOS_statement, "LED2") == 0) blink(LED2);
+            else if (strcasecmp(DOS_statement, "LED3") == 0) blink(LED3);
+            else if (strcasecmp(DOS_statement, "BELL") == 0) blink(BELL);
+            else if (strcasecmp(DOS_statement, "MOTOR") == 0) blink(MOTOR);
+            else printf("Error: Invalid GPIO pin number. Valid pins: IO1, IO2, IO3, LED1, LED2, LED3, BELL, MOTOR\n");
+        
+        } else if (strcasecmp(DOS_statement, "REBOOT\n") == 0 || strcasecmp(DOS_statement, "REBOOT.PROG\n") == 0) {
+            printf("Rebooting...\n");
+            main();
+        
+        } else if (strcasecmp(DOS_statement, "REBOOT") == 0 || strcasecmp(DOS_statement, "REBOOT.PROG") == 0) {
+            char *reboot[3];
+            for (int i=0; i<3; i++){
+                DOS_statement = strtok(NULL, " ");
+                if (DOS_statement != NULL) {
+                    reboot[i] = strdup(DOS_statement);
+                } else {
+                    reboot[i] = 0;
+                    break;
+                }
+            }
+            if (strcasecmp(reboot[1], "BASIC\n") == 0) {
+                printf("Rebooting to Macro Microcontroller BASIC...\n");
+                mode = 1;
+                main();
+            } else if (strcasecmp(reboot[1], "BOOTSEL\n") == 0) {
+                printf("Rebooting to BOOTSEL mode...\n");
+                mode = 2;
+                main();
+            } else {
+                printf("Error: Invalid option provided.\n");
+            }
+        
+        } else if (strcasecmp(DOS_statement, "UPTIME\n") == 0 || strcasecmp(DOS_statement, "UPTIME.PROG\n") == 0) {
+            printf("Uptime: %02u seconds\n", to_ms_since_boot(get_absolute_time())/1000);
+
         } else if (strcasecmp(DOS_statement, "EXIT\n") == 0) {
             return;
         } else {
@@ -184,6 +289,7 @@ void blink(int pin) {
 }
 
 void interpreter() {
+    mode = 0;
     printf("Macro Microcontroller BASIC Version 0.0.3.\n");
     volatile uint32_t stack_var;
     printf("%d bytes of RAM free.\n", (uint32_t)&stack_var - (uint32_t)&end);
@@ -279,6 +385,7 @@ void interpreter() {
             
         } else if (strcasecmp(statement, "REM") != 0) {
             printf("Error: Invalid statement.\n");
+
         }
     }
 }

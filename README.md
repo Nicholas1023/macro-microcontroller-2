@@ -23,7 +23,7 @@ Macro Microcontroller 2 allows you to control GPIO pins using macropad-like keys
 A basic BIOS-like firmware, which performs basic POST routines and reports information on the device. <a href="Firmware Files/macro-microcontroller-bios.c">Source code</a>.
 ```
  _  _
-| \/ | Macro Microcontroller BIOS Version 0.0.1.
+| \/ | Macro Microcontroller BIOS Version 0.0.2.
 |_\/_| Copyright (C) 2025-2026 Nicholas Lim.
 
 Device: Macro Microcontroller 2 (RP2040 @ 125MHz)
@@ -39,14 +39,18 @@ Booting system...
 
 ### Macro Microcontroller Disk Operating System (work in progress)
 A simple DOS-like environment that boots from the BIOS. <a href="Firmware Files/macro-microcontroller-bios+dos.c">Source code</a>.
-
-Available commands:
+Available commands (* denotes optional parameters):
 1. `HELP`: Launches the help guide.
-2. `ECHO`: Echoes text.
-3. `LS`: Show directory listing.
-4. `SYSTEM`: Starts another Macro Microcontroller DOS console.
-5. `EXIT`: Stops all processes for power off.
-
+2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ sqrt] [Number]
+3. `ECHO`: Echoes text.
+4. `LS`: Show program listing.
+5. `SYSTEM`: Starts another Macro Microcontroller DOS console.
+6. `EXIT`: Stops all processes for power off.
+7. `GPIO`: Turns on a specified GPIO for 1 second. Usage: GPIO [LED# IO# BELL MOTOR]
+8. `VERSION`: Shows the release version.
+9. `REBOOT`: Reboots the system. Usage: REBOOT -m [BASIC BOOTSEL]*
+10. `INFO`: Displays device and memory information.
+11. `UPTIME`: Shows device uptime.
 
 ### Macro Microcontroller BASIC Interpreter
 A BASIC interpreter written in C for Macro Microcontroller, providing a simple coding environment via a serial terminal. You may view a demo at <a href="Assets/firmware-demo.mp4">Assets/firmware-demo.mp4</a>. Currently available statements:
