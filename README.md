@@ -37,18 +37,18 @@ Press SW2 to enter BOOTSEL mode.
 Booting system...
 ```
 
-### Macro Microcontroller Disk Operating System (work in progress)
+### Macro Microcontroller Disk Operating System
 A simple DOS-like environment that boots from the BIOS. <a href="Firmware Files/macro-microcontroller-bios+dos.c">Source code</a>.
 Available commands (* denotes optional parameters):
 1. `HELP`: Launches the help guide.
-2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ sqrt] [Number]
+2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: `CALCULATE [Number] [+ - * / ^ sqrt] [Number]`
 3. `ECHO`: Echoes text.
 4. `LS`: Show program listing.
 5. `SYSTEM`: Starts another Macro Microcontroller DOS console.
 6. `EXIT`: Stops all processes for power off.
-7. `GPIO`: Turns on a specified GPIO for 1 second. Usage: GPIO [LED# IO# BELL MOTOR]
+7. `GPIO`: Turns on a specified GPIO for 1 second. Usage: `GPIO [LED# IO# BELL MOTOR]`
 8. `VERSION`: Shows the release version.
-9. `REBOOT`: Reboots the system. Usage: REBOOT -m [BASIC BOOTSEL]*
+9. `REBOOT`: Reboots the system. Usage: `REBOOT -m [BASIC BOOTSEL]*`
 10. `INFO`: Displays device and memory information.
 11. `UPTIME`: Shows device uptime.
 
