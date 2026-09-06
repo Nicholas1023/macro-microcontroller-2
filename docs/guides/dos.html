@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Macro Microcontroller 2 Documentation - DOS Guide</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="nav">
+            <h2><a class="text-a" href="index.html">Macro Microcontroller 2</a></h2>
+            <div id="navmenu">
+                <a href="/macro-microcontroller-2/index.html#hardware">Hardware Specifications</a>
+                <a href="/macro-microcontroller-2/index.html#downloads">Downloads</a>
+                <a href="/macro-microcontroller-2/guide.html">Guides</a>
+                <a href="https://editor.nicholaslim.me/macro-microcontroller.html" target="_blank">Web Editor</a>
+                <a target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2">View Repository</a>
+            </div>
+        </nav>
+        <main id="main" style="align-items: flex-start; text-align: left;">
+            <h1>Macro Microcontroller DOS Programming Guide</h1>
+            <p>Macro Microcontroller DOS is a simple DOS-like environment that boots from a custom BIOS.</p>
+            <h2>Installation</h2>
+            <ol>
+                <li><p>First, download macro-microcontroller-dos-0.0.2.uf2 from <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/tag/Macro_Microcontroller_DOS_v0.0.2">releases</a>. Current version: 0.0.2</p></li>
+                <li><p>Next, plug in your development board while holding the Boot button. A storage drive will appear on your computer.</p></li>
+                <li><p>Move macro-microcontroller-dos-0.0.1.uf2 into the storage drive. Your development board is now running Macro Microcontroller DOS, booting from a custom BIOS!</p></li>
+                <li><p>Install a serial terminal application on your computer and connect it to the board. If successful, you should see the following:</p><pre><code style="padding: 0;"> _  _<br>| \/ | Macro Microcontroller BIOS Version 0.0.2.<br>|_\/_| Copyright (C) 2025-2026 Nicholas Lim.<br><br>Device: Macro Microcontroller 2 (RP2040 @ 125MHz)<br>Serial Number: ****************<br>RAM Free: 254K OK<br>Serial Status: Connected<br><br>Press SW1 to enter Macro Microcontroller BASIC.<br>Press SW2 to enter BOOTSEL mode.<br><br>Booting system...</code></pre></li>
+            </ol>
+            <h2>Commands and Programs</h2>
+            <ul>
+                <li><code class="code">HELP</code>: Launches the help guide.</li>
+                <li><code class="code">CALCULATE</code>: Performs basic operations on 2 numbers. Usage: <code class="code">CALCULATE [Number] [+ - * / ^ sqrt] [Number]</code></li>
+                <li><code class="code">ECHO</code>: Echoes text.</li>
+                <li><code class="code">LS</code>: Show program listing.</li>
+                <li><code class="code">SYSTEM</code>: Starts another Macro Microcontroller DOS console.</li>
+                <li><code class="code">EXIT</code>: Stops all processes for power off.</li>
+                <li><code class="code">GPIO</code>: Turns on a specified GPIO for 1 second. Usage: <code class="code">GPIO [LED# IO# BELL MOTOR]</code></li>
+                <li><code class="code">VERSION</code>: Shows the release version.</li>
+                <li><code class="code">REBOOT</code>: Reboots the system. Usage: <code class="code">REBOOT -m [BASIC BOOTSEL]*</code></li>
+                <li><code class="code">INFO</code>: Displays device and memory information.</li>
+                <li><code class="code">UPTIME</code>: Shows device uptime.</li>
+            </ul>
+            <h2>Predefined Values for Parameters</h2>
+            <ul>
+                <li><code class="code">IO*</code>: Set GPIO pins 1, 2 or 3 to high.</li>
+                <li><code class="code">LED*</code>: Set LEDs 1, 2 or 3 to high.</li>
+                <li><code class="code">BELL</code>: Sounds the builtin buzzer.</li>
+                <li><code class="code">MOTOR</code>: Sets motor pins to high.</li>
+                <li><code class="code">BASIC</code>: Reboot in BASIC interpreter mode.</li>
+                <li><code class="code">BOOTSEL</code>: Reboot in BOOTSEL mode.</li>
+            </ul>
+        </main>
+        <footer id="footer">
+            <small>&copy; 2026 Nicholas Lim. Documentation is open source under the <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/docs/LICENSE.txt">MIT License</a>.</small>
+        </footer>
+        <script>
+            document.getElementById("main").style.paddingTop = `${document.getElementById("nav").offsetHeight}px`;
+            document.getElementById("main").style.paddingBottom = `${document.getElementById("footer").offsetHeight}px`;
+            if (window.innerWidth < 600) {
+                document.getElementById("navmenu").style.display = "none";
+                document.getElementById("nav").style.justifyContent = "center";
+                document.getElementById("banner").style.width = "100%";
+                document.getElementById("banner").style.height = "100%";
+                document.getElementById("main").style.maxWidth = `${window.innerWidth - 20}px`;
+            }
+        </script>
+    </body>
+</html>
