@@ -192,7 +192,7 @@ void DOS() {
             printf("%s\n", DOS_statement);
 
         } else if (strcasecmp(DOS_statement, "HELP\n") == 0 || strcasecmp(DOS_statement, "HELP.PROG\n") == 0) {
-            printf("Macro Microcontroller DOS Help Guide\nAvailable commands (* denotes optional parameters):\n- HELP: Launches the help guide.\n- CALCULATE: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ sqrt] [Number]\n- ECHO: Echoes text.\n- LS: Show program listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n- GPIO: Turns on a specified GPIO for 1 second. Usage: GPIO [LED# IO# BELL MOTOR]\n- VERSION: Shows the release version.\n- REBOOT: Reboots the system. Usage: REBOOT -m [BASIC BOOTSEL]*\n- INFO: Displays device and memory information.\n- UPTIME: Shows device uptime.\n");
+            printf("Macro Microcontroller DOS Help Guide\nAvailable commands (* denotes optional parameters):\n- HELP: Launches the help guide.\n- CALCULATE: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ root] [Number]\n- ECHO: Echoes text.\n- LS: Show program listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n- GPIO: Turns on a specified GPIO for 1 second. Usage: GPIO [LED# IO# BELL MOTOR]\n- VERSION: Shows the release version.\n- REBOOT: Reboots the system. Usage: REBOOT -m [BASIC BOOTSEL]*\n- INFO: Displays device and memory information.\n- UPTIME: Shows device uptime.\n");
         
         } else if (strcasecmp(DOS_statement, "LS\n") == 0 || strcasecmp(DOS_statement, "LS.PROG") == 0) {
             uint32_t free_flash = (16 * 1024 * 1024) - (((uintptr_t)&__flash_binary_end) - XIP_BASE);
@@ -247,7 +247,7 @@ void DOS() {
                 }
             } else if (strcmp(calc[1], "^") == 0) {
                 printf("%g", pow(a, b));
-            } else if (strcmp(calc[1], "sqrt") == 0) {
+            } else if (strcmp(calc[1], "root") == 0) {
                 printf("%g", pow(a, 1.0/b));
             } else {
                 printf("Error: Operation not recognised or available.");

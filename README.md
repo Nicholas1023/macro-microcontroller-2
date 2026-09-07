@@ -48,7 +48,7 @@ A simple DOS-like environment that boots from the BIOS. <a href="Firmware Files/
 
 Available commands (* denotes optional parameters):
 1. `HELP`: Launches the help guide.
-2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: `CALCULATE [Number] [+ - * / ^ sqrt] [Number]`
+2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: `CALCULATE [Number] [+ - * / ^ root] [Number]`
 3. `ECHO`: Echoes text.
 4. `LS`: Show program listing.
 5. `SYSTEM`: Starts another Macro Microcontroller DOS console.
