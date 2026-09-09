@@ -123,7 +123,7 @@ main
 |NX3225SA-12MHz|Y1|1|Crystal_SMD_3225-4Pin_3.2x2.5mm|
 
 ## Legal
-Hardware files ("<a href="PCB Files">PCB Files</a>", "<a href="Printing Files">Printing Files</a>", "<a href="Production Files">Production Files</a>", "<a href="schematics.pdf">schematics.pdf</a>") are licensed under the terms of the CERN-OHL-P-2.0 License. See <a href="LICENSE.txt">LICENSE.txt</a>.
+Hardware files ("<a href="PCB Files">PCB Files</a>", "<a href="Printing Files">Printing Files</a>", "<a href="Production Files">Production Files</a>", "<a href="schematics.pdf">schematics.pdf</a>") are licensed under the terms of the CERN-OHL-W-2.0 License from 9 September 2026 onwards. Versions prior to this date remains available under the terms of the CERN-OHL-P-2.0 License. See <a href="LICENSE.txt">LICENSE.txt</a>.
 
 Documentation files ("<a href="docs">docs</a>", "<a href="Assets">Assets</a>", "<a href="JOURNAL.md">JOURNAL.md</a>") are licensed under the terms of the MIT License. See <a href="docs/LICENSE.txt">docs/LICENSE.txt</a>.
 
