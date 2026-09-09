@@ -123,10 +123,12 @@ main
 |NX3225SA-12MHz|Y1|1|Crystal_SMD_3225-4Pin_3.2x2.5mm|
 
 ## Legal
-Hardware files ("<a href="PCB Files">PCB Files</a>", "<a href="Printing Files">Printing Files</a>", "<a href="Production Files">Production Files</a>", "<a href="schematics.pdf">schematics.pdf</a>") are licensed under the terms of the CERN-OHL-W-2.0 License from 9 September 2026 onwards. Versions prior to this date remains available under the terms of the CERN-OHL-P-2.0 License. See <a href="LICENSE.txt">LICENSE.txt</a>.
+<b>Hardware files</b> ("<a href="PCB Files">PCB Files</a>", "<a href="Printing Files">Printing Files</a>", "<a href="Production Files">Production Files</a>", "<a href="schematics.pdf">schematics.pdf</a>") are licensed under the terms of the CERN-OHL-W-2.0 License from 9 September 2026 onwards. Versions prior to this date remain available under the terms of the CERN-OHL-P-2.0 License. See <a href="LICENSE.txt">LICENSE.txt</a>.
 
-Documentation files ("<a href="docs">docs</a>", "<a href="Assets">Assets</a>", "<a href="JOURNAL.md">JOURNAL.md</a>") are licensed under the terms of the MIT License. See <a href="docs/LICENSE.txt">docs/LICENSE.txt</a>.
+<b>Documentation files</b> ("<a href="docs">docs</a>", "<a href="Assets">Assets</a>", "<a href="JOURNAL.md">JOURNAL.md</a>") are licensed under the terms of the MIT License. See <a href="docs/LICENSE.txt">docs/LICENSE.txt</a>.
 
-For firmware files ("<a href="Firmware Files">Firmware Files</a>"), please refer to the respective file headers for licensing and copyright information.
+<a href="Firmware Files/macro-microcontroller-basic.c">macro-microcontroller-basic.c</a>, <a href="Firmware Files/macro-microcontroller-bios.c">macro-microcontroller-bios.c</a>, <a href="Firmware Files/macro-microcontroller-bios+dos.c">macro-microcontroller-bios+dos.c</a> are licensed under the terms of the MIT License. <a href="Firmware Files/firmware-template.c">firmware-template.c</a> is licensed under the terms of the MIT-0 License. <a href="Firmware Files/example.bas">example.bas</a> is marked <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 
-Macro Microcontroller BIOS, Macro Microcontroller DOS and Macro Microcontroller BASIC compiles source code from the Pico SDK. See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for the Pico SDK license and copyright notice.
+Macro Microcontroller BIOS, Macro Microcontroller DOS and Macro Microcontroller BASIC compile source code from the following third-party software:
+
+- Pico SDK: See <a href="Firmware Files/pico_sdk_import.cmake">Firmware Files/pico_sdk_import.cmake</a> for the Pico SDK license and copyright notice.
