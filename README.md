@@ -1,5 +1,6 @@
 # Macro Microcontroller 2
-A macropad and RP2040 microcontroller development board that allows you to control GPIOs with keyboard keys combined on a single PCB, with a custom BASIC interpreter.
+
+An RP2040 microcontroller development board with an integrated macropad that lets you control GPIOs with keyboard keys on a single PCB, plus a custom BASIC interpreter and disk operating system.
 
 Documentation page: <a href="https://nicholaslim.me/macro-microcontroller-2">https://nicholaslim.me/macro-microcontroller-2</a>
 
@@ -74,6 +75,7 @@ Currently available statements:
 9. `REM`: Add comments to your program.
 
 For example programs, see <a href="Firmware Files/example.bas">Firmware Files/example.bas</a>.
+Try out the web editor at <a href="https://editor.nicholaslim.me/macro-microcontroller">https://editor.nicholaslim.me/macro-microcontroller</a>!
 
 ## Schematics
 <img src="Assets/schematics.svg">
