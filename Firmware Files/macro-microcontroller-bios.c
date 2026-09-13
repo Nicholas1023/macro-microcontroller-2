@@ -73,7 +73,7 @@ bool userconfig = true;
 void interpreter();
 void blink();
 void gpio_control();
-void DOS();
+void OS();
 
 int main() {
     stdio_init_all();
