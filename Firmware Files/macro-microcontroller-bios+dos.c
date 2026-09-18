@@ -68,8 +68,7 @@ char command[51];
 int line_count = 0;
 int mode = 0;
 
-/* Change the following to true to boot to Macro Microcontroller DOS, or false
-to boot to Macro Microcontroller BASIC by default (No bootable media found). */
+// Change the following to true to boot to Macro Microcontroller DOS.
 bool userconfig = true;
 
 void interpreter();
@@ -168,7 +167,6 @@ int main() {
         sleep_ms(500);
         gpio_put(BELL, 0);
         printf("No bootable media found.\n");
-        interpreter();
     } else {
         printf("\n\n");
         DOS();

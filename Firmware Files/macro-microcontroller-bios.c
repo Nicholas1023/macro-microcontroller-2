@@ -66,9 +66,8 @@ char command[51];
 int line_count = 0;
 int mode = 0;
 
-/* Change the following to true to add your own "OS", or false to boot to Macro
-Microcontroller BASIC by default (No bootable media found). */
-bool userconfig = true;
+// Change the following to true to add your own "OS".
+bool userconfig = false;
 
 void interpreter();
 void blink();
@@ -166,7 +165,6 @@ int main() {
         sleep_ms(500);
         gpio_put(BELL, 0);
         printf("No bootable media found.\n");
-        interpreter();
     } else {
         printf("\n\n");
         OS();
