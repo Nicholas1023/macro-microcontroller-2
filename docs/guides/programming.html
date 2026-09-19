@@ -12,8 +12,8 @@
         <nav id="nav">
             <h2><a class="text-a" href="/macro-microcontroller-2/index.html">Macro Microcontroller 2</a></h2>
             <div id="navmenu">
-                <a href="/macro-microcontroller-2/index.html#hardware">Hardware Specifications</a>
-                <a href="/macro-microcontroller-2/index.html#downloads">Downloads</a>
+                <a href="/macro-microcontroller-2/index.html">Homepage</a>
+                <a href="/macro-microcontroller-2/downloads.html">Downloads</a>
                 <a href="/macro-microcontroller-2/guides/">Guides</a>
                 <a href="https://editor.nicholaslim.me/macro-microcontroller.html" target="_blank">Web Editor</a>
                 <a target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2">View Repository</a>
@@ -27,7 +27,7 @@
                 <li><p>First, download macro-microcontroller-basic-0.0.3.uf2 from <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/tag/v0.0.3">releases</a>. Current version: 0.0.3</p></li>
                 <li><p>Next, plug in your development board while holding the Boot button. A storage drive will appear on your computer.</p></li>
                 <li><p>Move macro-microcontroller-basic-0.0.3.uf2 into the storage drive. Your development board is now running Macro Microcontroller BASIC!</p></li>
-                <li><p>Install a serial terminal application on your computer and connect it to the board. If successful, you should see the following:</p><pre><code style="padding: 0;">Macro Microcontroller BASIC Version 0.0.3.<br>Copyright (C) 2025-2026 Nicholas Lim.<br>521928 bytes of RAM free.<br>Ready.<br>10 </code></pre><p>If not, try sending <code class="code">PRINT "It works!"</code>. If "It works!" is sent back to the serial terminal, you have successfully installed Macro Microcontroller BASIC.</p></li>
+                <li><p>Install a serial terminal application on your computer and connect it to the board. If successful, you should see the following:</p><pre><code style="padding: 0;">Macro Microcontroller BASIC Version 0.0.3.<br>Copyright (C) 2025-2026 Nicholas Lim.<br>521928 bytes of RAM free.<br>Ready.<br>10 </code></pre><p>If not, try sending <code>PRINT "It works!"</code>. If "It works!" is sent back to the serial terminal, you have successfully installed Macro Microcontroller BASIC.</p></li>
             </ol>
             <h2>Syntax</h2>
             <p>Macro Microcontroller BASIC's syntax is similar to most other versions of BASIC:</p>
@@ -35,23 +35,23 @@
             <small>Note: Line numbers are automatically appended by the interpreter.</small>
             <h2>Statements</h2>
             <ul>
-                <li><code class="code">PRINT</code>: Outputs text to the serial terminal.</li>
-                <li><code class="code">LET</code>: Assigns a value (integer, float or string) to a variable.</li>
-                <li><code class="code">INPUT</code>: Assigns a value (integer, float or string) to a variable via user input.</li>
-                <li><code class="code">GPIO</code>: Turns on a specified GPIO pin for 1 second.</li>
-                <li><code class="code">LSVAR</code>: Outputs variable name and their value to the serial terminal.</li>
-                <li><code class="code">END</code>: Clears variable and reset line numbers.</li>
-                <li><code class="code">EXIT</code>: Puts the device into sleep/power off mode.</li>
-                <li><code class="code">KEY</code>: Pass GPIO controls to the macropad.</li>
-                <li><code class="code">REM</code>: Add comments to your program.</li>
+                <li><code>PRINT</code>: Outputs text to the serial terminal.</li>
+                <li><code>LET</code>: Assigns a value (integer, float or string) to a variable.</li>
+                <li><code>INPUT</code>: Assigns a value (integer, float or string) to a variable via user input.</li>
+                <li><code>GPIO</code>: Turns on a specified GPIO pin for 1 second.</li>
+                <li><code>LSVAR</code>: Outputs variable name and their value to the serial terminal.</li>
+                <li><code>END</code>: Clears variable and reset line numbers.</li>
+                <li><code>EXIT</code>: Puts the device into sleep/power off mode.</li>
+                <li><code>KEY</code>: Pass GPIO controls to the macropad.</li>
+                <li><code>REM</code>: Add comments to your program.</li>
             </ul>
             <h2>Predefined Values</h2>
             <ul>
-                <li><code class="code">IO*</code>: Set GPIO pins 1, 2 or 3 to high.</li>
-                <li><code class="code">LED*</code>: Set LEDs 1, 2 or 3 to high.</li>
-                <li><code class="code">BELL</code>: Sounds the builtin buzzer.</li>
-                <li><code class="code">MOTOR</code>: Sets motor pins to high.</li>
-                <li><code class="code">RND</code>: Generates a random floating-point integer less than 1.</li>
+                <li><code>IO*</code>: Set GPIO pins 1, 2 or 3 to high.</li>
+                <li><code>LED*</code>: Set LEDs 1, 2 or 3 to high.</li>
+                <li><code>BELL</code>: Sounds the builtin buzzer.</li>
+                <li><code>MOTOR</code>: Sets motor pins to high.</li>
+                <li><code>RND</code>: Generates a random floating-point integer less than 1.</li>
             </ul>
             <h2>Example Programs</h2>
             <p>Note: line numbers are automatically appended, hence there is no need to add them.</p>
@@ -64,8 +64,7 @@
             </ul>
         </main>
         <footer id="footer">
-            <small>&copy; 2026 Nicholas Lim. Documentation is open source under the <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/docs/LICENSE.txt">MIT License</a>.</small>
-        </footer>
+            <small>&copy; 2026 Nicholas Lim. | Documentation licensed under <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/docs/LICENSE.txt">MIT License</a>. | Hardware licensed under <a class="text-a" href="https://github.com/Nicholas1023/macro-microcontroller-2/blob/main/LICENSE.txt">CERN-OHL-W-2.0 License</a>.</small>
         <script>
             document.getElementById("main").style.paddingTop = `${document.getElementById("nav").offsetHeight}px`;
             document.getElementById("main").style.paddingBottom = `${document.getElementById("footer").offsetHeight}px`;

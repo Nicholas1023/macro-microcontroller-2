@@ -57,20 +57,13 @@ a:hover {
     color: #c3d0ff;
 }
 
-pre, .code {
-    background-color: lightgrey;
-    border-radius: 5px;
-    border: 1px solid grey;
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-    word-break: break-all;
-    padding: 0;
-    text-align: left;
-}
-
 code {
     color: black;
     font-family: monospace;
+    background-color: lightgrey;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 2px;
 }
 
 .code {
@@ -100,4 +93,12 @@ button:hover, .button:hover {
     text-decoration: none;
     color: white;
     background-color: #005ca8;
+}
+
+.download-section {
+    background-color: #00284a;
+    text-align: left;
+    margin: 10px;
+    width: 75dvw;
+    border-radius: 10px;
 }
