@@ -54,9 +54,9 @@ Available commands (* denotes optional parameters):
 4. `PROGLIST`: Show program listing.
 5. `SYSTEM`: Starts another Macro Microcontroller DOS console.
 6. `EXIT`: Stops all processes for power off.
-7. `OUT`: Turns on a specified GPIO for 1 second. Usage: `GPIO [LED# IO# BELL MOTOR]`
+7. `OUT`: Turns on a specified GPIO for 1 second. Usage: `OUT [LED# IO# BELL MOTOR]`
 8. `VERSION`: Shows the release version.
-9. `BOOT`: Reboots the system. Usage: `REBOOT -m [BASIC BOOTSEL]*`
+9. `BOOT`: Reboots the system. Usage: `BOOT -m [BASIC BOOTSEL]*`
 10. `DEVINFO`: Displays device and memory information.
 11. `UPTIME`: Shows device uptime.
 
