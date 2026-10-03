@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: 2025-2026 Nicholas Lim <nicholas_lim@bbsshack.club>
 /*
-Macro Microcontroller BIOS + Macro Microcontroller DOS, Version 0.0.2.
+Macro Microcontroller BIOS + Macro Microcontroller DOS, Version 0.0.3.
 PCB files for Macro Microcontroller 2 are available at
 https://github.com/Nicholas1023/macro-microcontroller-2.
 
@@ -167,6 +167,7 @@ int main() {
         sleep_ms(500);
         gpio_put(BELL, 0);
         printf("No bootable media found.\n");
+        
     } else {
         printf("\n\n");
         DOS();
@@ -176,7 +177,7 @@ int main() {
 }
 
 void DOS() {
-    printf("Macro Microcontroller Disk Operating System Version 0.0.2.\nCopyright (C) 2026 Nicholas Lim.\n");
+    printf("Macro Microcontroller Disk Operating System Version 0.0.3.\nCopyright (C) 2026 Nicholas Lim.\n");
     while (true) {;
         printf("Drive A> ");
         memset(DOS_input, 0, 51);
@@ -190,19 +191,19 @@ void DOS() {
             printf("%s\n", DOS_statement);
 
         } else if (strcasecmp(DOS_statement, "HELP\n") == 0 || strcasecmp(DOS_statement, "HELP.PROG\n") == 0) {
-            printf("Macro Microcontroller DOS Help Guide\nAvailable commands (* denotes optional parameters):\n- HELP: Launches the help guide.\n- CALCULATE: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ root] [Number]\n- ECHO: Echoes text.\n- LS: Show program listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n- GPIO: Turns on a specified GPIO for 1 second. Usage: GPIO [LED# IO# BELL MOTOR]\n- VERSION: Shows the release version.\n- REBOOT: Reboots the system. Usage: REBOOT -m [BASIC BOOTSEL]*\n- INFO: Displays device and memory information.\n- UPTIME: Shows device uptime.\n");
+            printf("Macro Microcontroller DOS Help Guide\nAvailable commands (* denotes optional parameters):\n- HELP: Launches the help guide.\n- CALCULATE: Performs basic operations on 2 numbers. Usage: CALCULATE [Number] [+ - * / ^ root] [Number]\n- ECHO: Echoes text.\n- PROGLIST: Show program listing.\n- SYSTEM: Starts another Macro Microcontroller DOS console.\n- EXIT: Stops all processes for power off.\n- OUT: Turns on a specified GPIO for 1 second. Usage: OUT [LED# IO# BELL MOTOR]\n- VERSION: Shows the release version.\n- BOOT: Reboots the system. Usage: BOOT -m [BASIC BOOTSEL]*\n- DEVINFO: Displays device and memory information.\n- UPTIME: Shows device uptime.\n");
         
-        } else if (strcasecmp(DOS_statement, "LS\n") == 0 || strcasecmp(DOS_statement, "LS.PROG") == 0) {
+        } else if (strcasecmp(DOS_statement, "PROGLIST\n") == 0 || strcasecmp(DOS_statement, "PROGLIST.PROG") == 0) {
             uint32_t free_flash = (16 * 1024 * 1024) - (((uintptr_t)&__flash_binary_end) - XIP_BASE);
-            printf("Storage: %uMB free\nProgram listing of Drive A:\nName             Last modified\n──────────────────────────────────\nSYSTEM.PROG      09-06-2026 09:02\nHELP.PROG        09-06-2026 10:21\nCALCULATE.PROG   09-06-2026 09:22\nREBOOT.PROG      09-06-2026 08:48\nECHO.PROG        09-06-2026 09:01\nLS.PROG          09-06-2026 10:00\nVERSION.PROG     09-06-2026 09:30\nGPIO.PROG        09-06-2026 10:00\nINFO.PROG        09-06-2026 10:09\nUPTIME.PROG      09-06-2026 10:23\n──────────────────────────────────\n", free_flash / 1024 / 1024);
+            printf("Storage: %uMB free\nProgram listing of Drive A:\nName             Last modified\n──────────────────────────────────\nSYSTEM.PROG      09-06-2026 09:02\nHELP.PROG        09-06-2026 10:21\nCALCULATE.PROG   09-06-2026 09:22\nBOOT.PROG      10-03-2026 11:47\nECHO.PROG        09-06-2026 09:01\nPROGLIST.PROG          10-03-2026 11:45\nVERSION.PROG     09-06-2026 09:30\nOUT.PROG        10-03-2026 11:45\nDEVINFO.PROG        19-03-2026 11:45\nUPTIME.PROG      09-06-2026 10:23\n──────────────────────────────────\n", free_flash / 1024 / 1024);
         
         } else if (strcasecmp(DOS_statement, "SYSTEM\n") == 0 || strcasecmp(DOS_statement, "SYSTEM.PROG\n") == 0) {
             DOS();
         
         } else if (strcasecmp(DOS_statement, "VERSION\n") == 0 || strcasecmp(DOS_statement, "VERSION.PROG\n") == 0) {
-            printf("Macro Microcontroller Disk Operating System Version 0.0.2 Release 09-06-2026.\nCopyright (C) 2026 Nicholas Lim. Open source under the MIT License.\nView source at https://github.com/Nicholas1023/macro-microcontroller-2.\n");
+            printf("Macro Microcontroller Disk Operating System Version 0.0.3 Release 10-03-2026.\nCopyright (C) 2026 Nicholas Lim. Open source under the MIT License.\nView source at https://github.com/Nicholas1023/macro-microcontroller-2.\n");
         
-        } else if (strcasecmp(DOS_statement, "INFO\n") == 0 || strcasecmp(DOS_statement, "INFO.PROG\n") == 0) {
+        } else if (strcasecmp(DOS_statement, "DEVINFO\n") == 0 || strcasecmp(DOS_statement, "DEVINFO.PROG\n") == 0) {
             printf("Device: Macro Microcontroller 2\nProcessor: RP2040 @ %.0fMHz\n", clock_get_hz(clk_sys)/1e+6);
             pico_unique_board_id_t id;
             pico_get_unique_board_id(&id);
@@ -252,10 +253,10 @@ void DOS() {
             }
             printf("\n");
         
-        } else if (strcasecmp(DOS_statement, "GPIO\n") == 0 || strcasecmp(DOS_statement, "GPIO.PROG\n") == 0) {
+        } else if (strcasecmp(DOS_statement, "OUT\n") == 0 || strcasecmp(DOS_statement, "OUT.PROG\n") == 0) {
             printf("Error: Missing parameters.\n");
         
-        } else if (strcasecmp(DOS_statement, "GPIO") == 0 || strcasecmp(DOS_statement, "GPIO.PROG") == 0) {
+        } else if (strcasecmp(DOS_statement, "OUT") == 0 || strcasecmp(DOS_statement, "OUT.PROG") == 0) {
             DOS_statement = strtok(NULL, "\n");
             if (DOS_statement == NULL) continue;
             if (strcasecmp(DOS_statement, "IO1") == 0) blink(IO1);
@@ -268,11 +269,11 @@ void DOS() {
             else if (strcasecmp(DOS_statement, "MOTOR") == 0) blink(MOTOR);
             else printf("Error: Invalid GPIO pin number. Valid pins: IO1, IO2, IO3, LED1, LED2, LED3, BELL, MOTOR\n");
         
-        } else if (strcasecmp(DOS_statement, "REBOOT\n") == 0 || strcasecmp(DOS_statement, "REBOOT.PROG\n") == 0) {
+        } else if (strcasecmp(DOS_statement, "BOOT\n") == 0 || strcasecmp(DOS_statement, "BOOT.PROG\n") == 0) {
             printf("Rebooting...\n");
             main();
         
-        } else if (strcasecmp(DOS_statement, "REBOOT") == 0 || strcasecmp(DOS_statement, "REBOOT.PROG") == 0) {
+        } else if (strcasecmp(DOS_statement, "BOOT") == 0 || strcasecmp(DOS_statement, "BOOT.PROG") == 0) {
             char *reboot[3];
             for (int i=0; i<3; i++){
                 DOS_statement = strtok(NULL, " ");
