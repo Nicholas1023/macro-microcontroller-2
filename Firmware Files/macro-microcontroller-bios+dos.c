@@ -195,7 +195,7 @@ void DOS() {
         
         } else if (strcasecmp(DOS_statement, "PROGLIST\n") == 0 || strcasecmp(DOS_statement, "PROGLIST.PROG") == 0) {
             uint32_t free_flash = (16 * 1024 * 1024) - (((uintptr_t)&__flash_binary_end) - XIP_BASE);
-            printf("Storage: %uMB free\nProgram listing of Drive A:\nName             Last modified\n──────────────────────────────────\nSYSTEM.PROG      09-06-2026 09:02\nHELP.PROG        09-06-2026 10:21\nCALCULATE.PROG   09-06-2026 09:22\nBOOT.PROG      10-03-2026 11:47\nECHO.PROG        09-06-2026 09:01\nPROGLIST.PROG          10-03-2026 11:45\nVERSION.PROG     09-06-2026 09:30\nOUT.PROG        10-03-2026 11:45\nDEVINFO.PROG        19-03-2026 11:45\nUPTIME.PROG      09-06-2026 10:23\n──────────────────────────────────\n", free_flash / 1024 / 1024);
+            printf("Storage: %uMB free\nProgram listing of Drive A:\nName             Last modified\n──────────────────────────────────\nSYSTEM.PROG      03-10-2026 13:50\nHELP.PROG        06-09-2026 10:21\nCALCULATE.PROG   06-09-2026 09:22\nBOOT.PROG        03-10-2026 11:47\nECHO.PROG        06-09-2026 09:01\nPROGLIST.PROG    03-10-2026 11:45\nVERSION.PROG     06-09-2026 09:30\nOUT.PROG         03-10-2026 11:45\nDEVINFO.PROG     03-10-2026 11:45\nUPTIME.PROG      06-09-2026 10:23\n──────────────────────────────────\n", free_flash / 1024 / 1024);
         
         } else if (strcasecmp(DOS_statement, "SYSTEM\n") == 0 || strcasecmp(DOS_statement, "SYSTEM.PROG\n") == 0) {
             DOS();
