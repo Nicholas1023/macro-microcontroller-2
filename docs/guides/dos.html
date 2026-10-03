@@ -24,7 +24,7 @@
             <p>Macro Microcontroller DOS is a simple DOS-like environment that boots from a custom BIOS.</p>
             <h2>Installation</h2>
             <ol>
-                <li><p>First, download macro-microcontroller-dos-0.0.2.uf2 from <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/tag/Macro_Microcontroller_DOS_v0.0.2">releases</a>. Current version: 0.0.2</p></li>
+                <li><p>First, download macro-microcontroller-dos-0.0.3.uf2 from <a class="text-a" target="_blank" href="https://github.com/Nicholas1023/macro-microcontroller-2/releases/tag/Macro_Microcontroller_DOS_v0.0.3">releases</a>. Current version: 0.0.3</p></li>
                 <li><p>Next, plug in your development board while holding the Boot button. A storage drive will appear on your computer.</p></li>
                 <li><p>Move macro-microcontroller-dos-0.0.1.uf2 into the storage drive. Your development board is now running Macro Microcontroller DOS, booting from a custom BIOS!</p></li>
                 <li><p>Install a serial terminal application on your computer and connect it to the board. If successful, you should see the following:</p><pre> _  _<br>| \/ | Macro Microcontroller BIOS Version 0.0.2.<br>|_\/_| Copyright (C) 2025-2026 Nicholas Lim.<br><br>Device: Macro Microcontroller 2 (RP2040 @ 125MHz)<br>Serial Number: ****************<br>RAM Free: 254K OK<br>Serial Status: Connected<br><br>Press SW1 to enter Macro Microcontroller BASIC.<br>Press SW2 to enter BOOTSEL mode.<br><br>Booting system...</pre></li>
@@ -34,13 +34,13 @@
                 <li><code>HELP</code>: Launches the help guide.</li>
                 <li><code>CALCULATE</code>: Performs basic operations on 2 numbers. Usage: <code>CALCULATE [Number] [+ - * / ^ root] [Number]</code></li>
                 <li><code>ECHO</code>: Echoes text.</li>
-                <li><code>LS</code>: Show program listing.</li>
+                <li><code>PROGLIST</code>: Show program listing.</li>
                 <li><code>SYSTEM</code>: Starts another Macro Microcontroller DOS console.</li>
                 <li><code>EXIT</code>: Stops all processes for power off.</li>
-                <li><code>GPIO</code>: Turns on a specified GPIO for 1 second. Usage: <code>GPIO [LED# IO# BELL MOTOR]</code></li>
+                <li><code>OUT</code>: Turns on a specified GPIO for 1 second. Usage: <code>GPIO [LED# IO# BELL MOTOR]</code></li>
                 <li><code>VERSION</code>: Shows the release version.</li>
-                <li><code>REBOOT</code>: Reboots the system. Usage: <code>REBOOT -m [BASIC BOOTSEL]*</code></li>
-                <li><code>INFO</code>: Displays device and memory information.</li>
+                <li><code>BOOT</code>: Reboots the system. Usage: <code>REBOOT -m [BASIC BOOTSEL]*</code></li>
+                <li><code>DEVINFO</code>: Displays device and memory information.</li>
                 <li><code>UPTIME</code>: Shows device uptime.</li>
             </ul>
             <h2>Predefined Values for Parameters</h2>

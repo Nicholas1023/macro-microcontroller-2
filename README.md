@@ -51,13 +51,13 @@ Available commands (* denotes optional parameters):
 1. `HELP`: Launches the help guide.
 2. `CALCULATE`: Performs basic operations on 2 numbers. Usage: `CALCULATE [Number] [+ - * / ^ root] [Number]`
 3. `ECHO`: Echoes text.
-4. `LS`: Show program listing.
+4. `PROGLIST`: Show program listing.
 5. `SYSTEM`: Starts another Macro Microcontroller DOS console.
 6. `EXIT`: Stops all processes for power off.
-7. `GPIO`: Turns on a specified GPIO for 1 second. Usage: `GPIO [LED# IO# BELL MOTOR]`
+7. `OUT`: Turns on a specified GPIO for 1 second. Usage: `GPIO [LED# IO# BELL MOTOR]`
 8. `VERSION`: Shows the release version.
-9. `REBOOT`: Reboots the system. Usage: `REBOOT -m [BASIC BOOTSEL]*`
-10. `INFO`: Displays device and memory information.
+9. `BOOT`: Reboots the system. Usage: `REBOOT -m [BASIC BOOTSEL]*`
+10. `DEVINFO`: Displays device and memory information.
 11. `UPTIME`: Shows device uptime.
 
 ### Macro Microcontroller BASIC Interpreter
