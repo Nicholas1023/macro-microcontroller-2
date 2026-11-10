@@ -1,6 +1,6 @@
 # Macro Microcontroller 2
 
-An RP2040 microcontroller development board with an integrated macropad that lets you control GPIOs with keyboard keys on a single PCB, plus a custom BASIC interpreter and disk operating system.
+An RP2040-based microcontroller development board with an integrated macropad which provides GPIO controls with keyboard keys on a single PCB, plus a custom BASIC interpreter and disk operating system.
 
 Documentation page: <a href="https://nicholaslim.me/macro-microcontroller-2">https://nicholaslim.me/macro-microcontroller-2</a>
 
